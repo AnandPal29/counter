@@ -33,9 +33,15 @@ const Counter = () => {
     }
 
     useEffect(() => {
-      const iValue = prompt("Set Initial Value", 1) || 1;
+      let iValue = prompt("Set Initial Value", 1) || 1;
+      if((/[a-zA-Z]/).test(iValue)){
+        iValue = 1;
+      }
       setNum(iValue*1);
-      const maxValue = prompt("Set Max Value", 1000) || 1000;
+      let maxValue = prompt("Set Max Value", 1000) || 1000;
+      if((/[a-zA-Z]/).test(maxValue)){
+        maxValue = 1000;
+      }
       setMaxVal(maxValue*1);
     }, []);
 
