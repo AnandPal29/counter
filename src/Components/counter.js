@@ -20,7 +20,6 @@ const Counter = () => {
 
     useEffect(() => {
       const iValue = prompt("Set Initial Value", 1) || 1;
-      alert(iValue);
       setNum(iValue*1);
       const maxValue = prompt("Set Max Value", 1000) || 1000;
       setMaxVal(maxValue*1);
