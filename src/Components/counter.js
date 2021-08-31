@@ -18,6 +18,20 @@ const Counter = () => {
       setNum(num*1-1);
     }
 
+    const setInput = (val) => {
+      if((/[a-zA-Z]/).test(val)){
+        alert("Cannot Enter Character")
+      }
+      else{
+        if(val*1 > maxVal){
+          alert(val + ' is greater than ' + maxVal + '. Maximum Limit is ' + maxVal);
+        }
+        else{
+          setNum(val*1);
+        }
+      }
+    }
+
     useEffect(() => {
       const iValue = prompt("Set Initial Value", 1) || 1;
       setNum(iValue*1);
@@ -28,7 +42,7 @@ const Counter = () => {
     return(
       <div className="container">
         <h1 className="button btnLeft" onClick={decrement}> - </h1>
-        <input className="inputBox" value={num} onChange={(e) => setNum(e.target.value)}></input>
+        <input className="inputBox" value={num} onChange={(e) => setInput(e.target.value)}></input>
         <h1 className="button btnRight" onClick={increment}> + </h1>
       </div>
     )
