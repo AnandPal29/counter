@@ -19,7 +19,7 @@ const Counter = () => {
     }
 
     const setInput = (val) => {
-      if((/[a-zA-Z]/).test(val)){
+      if(isNaN(val)){
         alert("Cannot Enter Character")
       }
       else{
@@ -34,12 +34,12 @@ const Counter = () => {
 
     useEffect(() => {
       let iValue = prompt("Set Initial Value", 1) || 1;
-      if((/[a-zA-Z]/).test(iValue)){
+      if(isNaN(iValue)){
         iValue = 1;
       }
       setNum(iValue*1);
       let maxValue = prompt("Set Max Value", 1000) || 1000;
-      if((/[a-zA-Z]/).test(maxValue)){
+      if(isNaN(maxValue)){
         maxValue = 1000;
       }
       setMaxVal(maxValue*1);
